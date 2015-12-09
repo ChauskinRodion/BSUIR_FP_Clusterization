@@ -10,8 +10,7 @@ data Arguments = Arguments
   , csv_separator :: String
   , csv_skip_first_column :: Bool
   , csv_skip_last_column :: Bool
-  , csv_skip_head_row :: Bool}
-  --, jobs_count :: String}
+  , csv_skip_first_row :: Bool}
 
 arguments :: Parser Arguments
 arguments = Arguments
@@ -52,7 +51,3 @@ arguments = Arguments
     <*> switch
          ( long "csv-ignore-first-row"
         <> help "Skip head row of csv file." )
-
-
-
-          --Файл данных, количество кластеров и точность задаются пользователем. Так же пользователем задается в виде параметра используемая метрика.

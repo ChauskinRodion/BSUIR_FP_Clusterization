@@ -21,7 +21,11 @@ executable BSUIR-FP-Clusterization
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.8 && <4.9,
-                       optparse-applicative
-
+                       vector,
+                       cassava,
+                       optparse-applicative,
+                       bytestring,
+                       matrix,
+                       random
   hs-source-dirs:      src
   default-language:    Haskell2010
