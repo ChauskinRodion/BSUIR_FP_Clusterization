@@ -6,7 +6,9 @@ data Arguments = Arguments
   { in_file :: String
   , out_file :: String
   , clusters :: Int
-  , precision :: Int
+  , precision :: Double
+  , random_matrix :: Bool
+  , algorytm :: String
   , csv_separator :: String
   , csv_skip_first_column :: Bool
   , csv_skip_last_column :: Bool
@@ -35,8 +37,17 @@ arguments = Arguments
          ( long "precision"
         <> short 'p'
         <> metavar "PRECISION"
-        <> value 2
-        <> help "Precision of calculations. Default 2" )
+        <> value 0.001
+        <> help "Precision of calculations. Default 0.001" )
+    <*> switch
+         ( long "random-matrix"
+        <> help "Skip first column of csv file." )                  
+    <*> strOption
+         ( long "algorytm"
+        <> short 'a'
+        <> metavar "Euclidean(E) or Hamming(H). Default E"
+        <> value "A"
+        <> help "Write output to FILE" )         
     <*> strOption
          ( long "csv-separator"
         <> metavar "SEPARATOR"
